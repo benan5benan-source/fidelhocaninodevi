@@ -186,13 +186,14 @@ body {
     /* CHANGE THIS LINE: Set the vertical position to 'top' */
     background-position: center top; 
     
-    background-attachment: fixed;
+    background-attachment: scroll;
     min-height: 100vh;
     margin: 0;
 }
     
     /* ... other mobile styles ... */
 }
+
 
 
 
