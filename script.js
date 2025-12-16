@@ -1,22 +1,23 @@
 document.addEventListener('DOMContentLoaded', (event) => {
 
-    // --- 1. Element References and Audio Control Logic ---
+    // --- 1. Element References (All IDs used for reliability) ---
 
     const mariaAudio = document.getElementById('mariaAudio');
     const speedSlider = document.getElementById('speedSlider');
     const currentSpeedSpan = document.getElementById('currentSpeed');
-    
-    // REFERENCE THE TRUMPET AUDIO ELEMENT
     const trumpetAudio = document.getElementById('trumpetSound'); 
     
+    // Selector for the quiz elements
+    const submitButton = document.getElementById('submitAnswersButton');
+    const inputFields = document.querySelectorAll('.questions-section input[type="text"]');
 
-    // Basic error check for speed control elements
+
+    // --- 2. Audio Speed Control Logic ---
+
     if (mariaAudio && speedSlider && currentSpeedSpan) {
-        // Set initial speed
         mariaAudio.playbackRate = speedSlider.value;
         currentSpeedSpan.textContent = `${speedSlider.value}x`;
 
-        // Event listener for the slider input
         speedSlider.addEventListener('input', () => {
             const newSpeed = speedSlider.value;
             mariaAudio.playbackRate = newSpeed;
@@ -24,10 +25,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     }
 
+    // --- 3. Quiz Answer Checking Logic ---
 
-    // --- 2. Quiz Answer Checking Logic ---
-
-    // Define the correct answers 
+    // Define the correct answers (UPDATE THESE IF NEEDED)
     const correctAnswers = [
         "spain",                             // 1. Where is Maria from?
         "german",                            // 2. Which foreign language is Maria learning?
@@ -35,10 +35,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         "20, twenty",                        // 4. How old is Maria?
         "nervous, confident",                // 5. How does Maria feel about studying abroad?
     ];
-
-    // FIX: Use the specific ID selector to target the Submit button reliably
-    const submitButton = document.getElementById('submitAnswersButton');
-    const inputFields = document.querySelectorAll('.questions-section input[type="text"]');
 
     // Attach the checkAnswers function to the submit button
     if (submitButton && inputFields.length === correctAnswers.length) {
@@ -50,21 +46,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
         let score = 0;
         let feedbackHTML = '<h3>✅ Quiz Results</h3>';
 
-        // Play the trumpet sound FIRST, so it starts immediately on click
+        // START FIX: Reliable audio playback logic
         if (trumpetAudio) {
             trumpetAudio.currentTime = 0; // Rewind to the start
-            trumpetAudio.play().catch(e => {
-                console.error("Audio playback error:", e);
-            });
+            // Attempt to play and use .then() to confirm success
+            trumpetAudio.play()
+                .catch(e => {
+                    // This block catches the common security error where audio is blocked.
+                    console.error("Audio playback error: Could not play trumpet.", e);
+                    // You can add an alert here for debugging if needed:
+                    // alert("Audio blocked by browser. Check file path or permission settings.");
+                });
         }
-        
+        // END FIX
+
         // Loop through all questions
         inputFields.forEach((input, index) => {
             const userAnswer = input.value.trim().toLowerCase();
             const correctKeywordString = correctAnswers[index].toLowerCase();
             const correctKeywords = correctKeywordString.split(',').map(keyword => keyword.trim());
             
-            // Check if the user's answer exactly matches one of the correct keywords
             const isCorrect = userAnswer !== "" && correctKeywords.includes(userAnswer);
 
             // Add visual feedback
@@ -100,7 +101,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             resultsDiv.id = 'results-feedback';
             resultsDiv.style.marginTop = '20px';
             const questionsSection = document.querySelector('.questions-section');
-            const submitButton = document.getElementById('submitAnswersButton'); // Use ID here too
+            const submitButton = document.getElementById('submitAnswersButton');
             if (questionsSection && submitButton) {
                 questionsSection.insertBefore(resultsDiv, submitButton);
             }
@@ -110,9 +111,3 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
 });
-        
-        resultsDiv.innerHTML = htmlContent;
-    }
-
-
-}); // <-- This closing bracket was missing from your previous code!
