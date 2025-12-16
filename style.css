@@ -124,4 +124,44 @@ button {
 
 button:hover {
     background-color: #0056b3;
+
+}
+
+/* In your style.css file */
+
+body {
+    /* 1. Specify the image URL */
+    /* Replace 'your-background-image.jpg' with the actual path/URL to your image */
+    background-image: url('your-background-image.jpg');
+
+    /* 2. Control image repetition */
+    /* Prevents the image from repeating itself across the screen */
+    background-repeat: no-repeat; 
+
+    /* 3. Determine how the image covers the area */
+    /* 'cover' scales the image to be as large as possible without stretching, 
+       ensuring the background area is completely covered. */
+    background-size: cover;
+
+    /* 4. Fix the image's position (optional but recommended for full-page backgrounds) */
+    /* This makes the background image stay in place when the user scrolls. */
+    background-attachment: fixed;
+
+    /* 5. Set the starting position (optional) */
+    /* Centers the image within the background area */
+    background-position: center center;
+
+    /* OPTIONAL: Fallback color */
+    /* This color will show up while the image loads, or if the image fails to load. */
+    background-color: #f0f0f0; /* A light grey color */
+}
+
+/* You might need to adjust the content's opacity or add a semi-transparent 
+   overlay to ensure your text and elements are readable on the background image. */
+.container {
+    /* Example: Add a white, slightly transparent background to the main content container */
+    background-color: rgba(255, 255, 255, 0.85); 
+    padding: 20px;
+    border-radius: 8px;
+    /* Other existing .container styles... */
 }
