@@ -8,6 +8,8 @@ body {
     width: 100%;
     max-width: 800px;
     background-color: #f4f7f9;
+    text-align: center;
+    align-items: center;
 
 }
 
@@ -165,6 +167,7 @@ body {
     align-items: center;
     /* Other existing .container styles... */
 }
+
 
 
 
