@@ -1,8 +1,4 @@
-body {
-    font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #f4f7f9;
-}
+
 
 
 
@@ -153,6 +149,9 @@ body {
     background-size: contain; /* This is the key property for full coverage */
     background-position: center center;
     background-attachment: fixed; /* Keeps the background static when scrolling */
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f7f9;
 
     /* 2. Remove default body margins/padding */
     margin: 0;
@@ -198,6 +197,7 @@ body {
     
     /* ... other mobile styles ... */
 }
+
 
 
 
