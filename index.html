@@ -59,7 +59,6 @@
             
             <button id="submitAnswersButton">Submit Answers</button>
             
-
             <p style="text-align: center;">
                 <b>© Yusuf Karaoğlan / Ahmet Benan Alişan / Nuri Can</b>
             </p>
@@ -69,54 +68,10 @@
     
     <audio id="trumpetSound" src="trumpet.mp3" hidden></audio>
 
-    <script>
-        // Get references to the button and the trumpet audio
-        const submitButton = document.getElementById('submitAnswersButton');
-        const trumpetAudio = document.getElementById('trumpetSound');
+    <script src="script.js"></script>
 
-        // Check if both elements exist before adding the listener
-        if (submitButton && trumpetAudio) {
-            submitButton.addEventListener('click', function() {
-                // Ensure the sound starts from the beginning every time
-                trumpetAudio.currentTime = 0; 
-                
-                // Play the sound!
-                trumpetAudio.play()
-                    .catch(e => {
-                        // This catches possible errors, like browser preventing autoplay
-                    });
-
-                // NOTE: Add your real form submission/answer checking logic here!
-            });
-        }
-        
-        // --- Existing Speed Control Script (Assuming this was in script.js) ---
-        // I recommend placing this below the new code, or in the separate script.js file.
-        const audioPlayer = document.getElementById('mariaAudio');
-        const speedSlider = document.getElementById('speedSlider');
-        const currentSpeedSpan = document.getElementById('currentSpeed');
-
-        // Initial display
-        currentSpeedSpan.textContent = speedSlider.value + 'x';
-
-        speedSlider.addEventListener('input', function() {
-            const speed = parseFloat(this.value);
-            audioPlayer.playbackRate = speed;
-            currentSpeedSpan.textContent = speed.toFixed(1) + 'x';
-        });
-
-    </script>
-
-     <div class="audio-controls-container">
-                <audio id="mariaAudio" controls>
-                    <source src="afia.mp3" type="audio/mpeg">
-                    <source src="your-audio-file.ogg" type="audio/ogg">
-                    Your browser does not support the audio element.
-                </audio>
-        </div>
     </body>
 </html>
-
 
 
 
