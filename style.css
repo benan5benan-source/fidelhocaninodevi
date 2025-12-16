@@ -152,5 +152,13 @@ body {
    overlay to ensure your text and elements are readable on the background image. */
 
 
+.container {
+    /* Example: Add a white, slightly transparent background to the main content container */
+    background-color: rgba(255, 255, 255, 0.85); 
+    padding: 20px;
+    border-radius: 8px;
+    /* Other existing .container styles... */
+}
+
 
 
