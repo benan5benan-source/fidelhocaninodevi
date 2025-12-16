@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     color: #333;
-    margin: 0;
+    margin: auto;
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -167,6 +167,7 @@ body {
     align-items: center;
     /* Other existing .container styles... */
 }
+
 
 
 
