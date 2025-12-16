@@ -183,9 +183,9 @@ body {
 @media (max-width: 600px) {
     /* Apply mobile-specific background to the body */
     body {
-    /* background-image: url('mobile.png'); */
-    background-repeat: no-repeat;
-    background-size: cover; 
+        background-image: url('mobile.png');
+        background-repeat: no-repeat;
+        background-size: cover; 
     
     /* CHANGE THIS LINE: Set the vertical position to 'top' */
     background-position: center top; 
@@ -197,6 +197,7 @@ body {
     
     /* ... other mobile styles ... */
 }
+
 
 
 
