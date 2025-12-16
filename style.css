@@ -150,7 +150,7 @@ body {
     /* 1. Background Image and Control */
     background-image: url('your-background-image.jpg'); /* REPLACE with your file path! */
     background-repeat: no-repeat;
-    background-size: cover; /* This is the key property for full coverage */
+    background-size: contain; /* This is the key property for full coverage */
     background-position: center center;
     background-attachment: fixed; /* Keeps the background static when scrolling */
 
@@ -170,6 +170,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 
 
 
