@@ -176,6 +176,17 @@ body {
 
 
 
+@media (max-width: 600px) {
+    /* Apply mobile-specific background to the body */
+    body {
+        background-image: url('mobile.png'); 
+        /* You might want to remove background-attachment: fixed on mobile 
+           for better performance */
+        background-attachment: scroll; 
+    }
+    
+    /* ... other mobile styles ... */
+}
 
 
 
