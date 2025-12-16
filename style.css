@@ -174,7 +174,12 @@ body {
 
 
 
-
+.container {
+    max-width: 800px; /* Wide on desktop */
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.85);
+}
 
 @media (max-width: 2600px) {
     /* Apply mobile-specific background to the body */
@@ -193,6 +198,7 @@ body {
     
     /* ... other mobile styles ... */
 }
+
 
 
 
