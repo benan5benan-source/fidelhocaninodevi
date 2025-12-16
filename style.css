@@ -179,7 +179,7 @@ body {
 @media (max-width: 2600px) {
     /* Apply mobile-specific background to the body */
 body {
-    background-image: url('path/to/your/image.jpg'); 
+    background-image: url('mobile.png'); 
     background-repeat: no-repeat;
     background-size: cover; 
     
@@ -193,6 +193,7 @@ body {
     
     /* ... other mobile styles ... */
 }
+
 
 
 
