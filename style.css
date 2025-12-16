@@ -8,14 +8,7 @@ body {
     justify-content: center;
 }
 
-.container {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    width: 100%;
-}
+
 
 h1 {
     text-align: center;
@@ -165,4 +158,5 @@ body {
     border-radius: 8px;
     /* Other existing .container styles... */
 }
+
 
