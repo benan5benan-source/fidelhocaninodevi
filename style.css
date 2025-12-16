@@ -182,8 +182,8 @@ body {
 
 @media (max-width: 600px) {
     /* Apply mobile-specific background to the body */
-body {
-    background-image: url('mobile.png'); 
+    body {
+    /* background-image: url('mobile.png'); */
     background-repeat: no-repeat;
     background-size: cover; 
     
@@ -193,10 +193,11 @@ body {
     background-attachment: scroll;
     min-height: 100vh;
     margin: 0;
-}
+    }
     
     /* ... other mobile styles ... */
 }
+
 
 
 
