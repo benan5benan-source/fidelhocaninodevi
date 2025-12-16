@@ -133,7 +133,7 @@ body {
     /* 3. Determine how the image covers the area */
     /* 'cover' scales the image to be as large as possible without stretching, 
        ensuring the background area is completely covered. */
-    background-size: %30;
+    background-size: %70;
 
     /* 4. Fix the image's position (optional but recommended for full-page backgrounds) */
     /* This makes the background image stay in place when the user scrolls. */
@@ -160,6 +160,7 @@ body {
     opacity: 0.80;
     /* Other existing .container styles... */
 }
+
 
 
 
