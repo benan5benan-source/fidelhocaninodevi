@@ -131,7 +131,7 @@ button:hover {
 body {
     /* 1. Specify the image URL */
     /* Replace 'your-background-image.jpg' with the actual path/URL to your image */
-    background-image: url('your-background-image.jpg');
+    background-image: url('your-background-image1.jpg');
 
     /* 2. Control image repetition */
     /* Prevents the image from repeating itself across the screen */
@@ -179,6 +179,33 @@ body {
 
 
 
+/* In style.css */
+
+body {
+    /* 1. Background Image and Control */
+    background-image: url('your-background-image.jpg'); /* REPLACE with your file path! */
+    background-repeat: no-repeat;
+    background-size: cover; /* This is the key property for full coverage */
+    background-position: center center;
+    background-attachment: fixed; /* Keeps the background static when scrolling */
+
+    /* 2. Remove default body margins/padding */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Ensures the body covers at least the full viewport height */
+}
+
+/* 3. Ensure Content Readability (Crucial step!) */
+.container {
+    /* Add a semi-transparent background to the container 
+       so the text is easy to read over the background image. */
+    background-color: rgba(255, 255, 255, 0.85); /* White with 85% opacity */
+    padding: 20px;
+    margin: 50px auto; /* Centers the container on the page */
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
 
 
 
