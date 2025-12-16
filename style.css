@@ -7,6 +7,8 @@ body {
     justify-content: center;
     width: 100%;
     max-width: 800px;
+    background-color: #f4f7f9;
+
 }
 
 
@@ -162,6 +164,7 @@ body {
     opacity: 0.80;
     /* Other existing .container styles... */
 }
+
 
 
 
