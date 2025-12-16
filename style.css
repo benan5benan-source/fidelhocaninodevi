@@ -162,8 +162,10 @@ body {
     padding: 20px;
     border-radius: 8px;
     opacity: 0.80;
+    align-items: center;
     /* Other existing .container styles... */
 }
+
 
 
 
