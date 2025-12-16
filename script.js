@@ -1,13 +1,13 @@
 document.addEventListener('DOMContentLoaded', (event) => {
 
-    // --- 1. Element References (All IDs used for reliability) ---
+    // --- 1. Element References (All IDs used for maximum reliability) ---
 
     const mariaAudio = document.getElementById('mariaAudio');
     const speedSlider = document.getElementById('speedSlider');
     const currentSpeedSpan = document.getElementById('currentSpeed');
     const trumpetAudio = document.getElementById('trumpetSound'); 
     
-    // Selector for the quiz elements
+    // CRITICAL FIX: Ensure the button is selected correctly
     const submitButton = document.getElementById('submitAnswersButton');
     const inputFields = document.querySelectorAll('.questions-section input[type="text"]');
 
@@ -36,9 +36,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
         "nervous, confident",                // 5. How does Maria feel about studying abroad?
     ];
 
-    // Attach the checkAnswers function to the submit button
-    if (submitButton && inputFields.length === correctAnswers.length) {
+    // CRITICAL FIX: Robust Event Listener Attachment
+    if (submitButton) {
         submitButton.addEventListener('click', checkAnswers);
+    } else {
+        // This message will appear in the browser console if the button ID is wrong
+        console.error("CRITICAL ERROR: submitAnswersButton element not found. Check HTML ID.");
     }
 
 
@@ -46,19 +49,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
         let score = 0;
         let feedbackHTML = '<h3>✅ Quiz Results</h3>';
 
-        // START FIX: Reliable audio playback logic
+        // FIX: Reliable audio playback logic
         if (trumpetAudio) {
-            trumpetAudio.currentTime = 0; // Rewind to the start
-            // Attempt to play and use .then() to confirm success
+            trumpetAudio.currentTime = 0; 
+            
+            // Use play() with .catch() to bypass silent failures
             trumpetAudio.play()
                 .catch(e => {
-                    // This block catches the common security error where audio is blocked.
-                    console.error("Audio playback error: Could not play trumpet.", e);
-                    // You can add an alert here for debugging if needed:
-                    // alert("Audio blocked by browser. Check file path or permission settings.");
+                    console.error("Audio playback error: Could not play trumpet. File or browser policy issue.", e);
                 });
         }
-        // END FIX
 
         // Loop through all questions
         inputFields.forEach((input, index) => {
