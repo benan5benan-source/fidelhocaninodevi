@@ -181,7 +181,7 @@ body {
     background-color: rgba(255, 255, 255, 0.85);
 }
 
-@media (max-width: 2600px) {
+@media (max-width: 600px) {
     /* Apply mobile-specific background to the body */
 body {
     background-image: url('mobile.png'); 
@@ -198,6 +198,7 @@ body {
     
     /* ... other mobile styles ... */
 }
+
 
 
 
