@@ -157,7 +157,7 @@ body {
     /* 2. Remove default body margins/padding */
     margin: 0;
     padding: 0;
-    min-height: 100vh; /* Ensures the body covers at least the full viewport height */
+    /*min-height: 100vh; /* Ensures the body covers at least the full viewport height */
 }
 
 /* 3. Ensure Content Readability (Crucial step!) */
@@ -171,6 +171,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 
 
 
